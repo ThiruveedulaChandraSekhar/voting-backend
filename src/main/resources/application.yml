@@ -1,13 +1,13 @@
 server:
   port: 8080
-#servlet:
-#  context-path: "/api"
+
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/voting_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-    username: springstudent
-    password: springstudent
+    url: jdbc:mysql://db:3306/voting?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: votinguser
+    password: votingpass123
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -16,15 +16,14 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.MySQLDialect
-#jwt:
-#  secret: votingAppSecretKeyVeryLongAndSecureKeyForJWTTokens1234567890
-#  expiration: 86400000
+
 springdoc:
   api-docs:
     path: "/api-docs"
   swagger-ui:
     path: "/swagger-ui.html"
     operations-sorter: method
+
 management:
   endpoints:
     web:
